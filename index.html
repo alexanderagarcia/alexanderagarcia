@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alex Garcia | Mechanical Engineering</title>
+    <meta name="description" content="Engineering portfolio of Alex Garcia — Mechanical Engineering, mechanical design, industrial systems, CAD, automation, and software development.">
+
+    <style>
+        /* ================================
+           GLOBAL
+        ================================= */
+        :root {
+            --navy: #0b172a;
+            --navy-light: #132642;
+            --blue: #2563eb;
+            --blue-light: #3b82f6;
+            --white: #ffffff;
+            --light: #f4f6f8;
+            --gray: #64748b;
+            --dark: #111827;
+            --border: #dbe1e8;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            margin-bottom: 45px;
+            max-width: 700px;
+        }
+
+        .section-dark .section-subtitle {
+            color: #b9c5d6;
+        }
+
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 23, 42, 0.97);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--blue-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d8e0ea;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 18, 34, 0.98),
+                    rgba(11, 23, 42, 0.92)
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 80px 0;
+        }
+
+        .hero-label {
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.3rem, 8vw, 6.5rem);
+            line-height: 0.95;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: normal;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            color: #aebbc9;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #64748b;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           ABOUT
+        ================================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #475569;
+        }
+
+        .quick-info {
+            border-left: 3px solid var(--blue);
+            padding-left: 25px;
+        }
+
+        .quick-info div {
+            margin-bottom: 20px;
+        }
+
+        .quick-info strong {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        /* ================================
+           EXPERIENCE
+        ================================= */
+        .experience {
+            border-left: 2px solid #cbd5e1;
+            padding-left: 30px;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--blue);
+            border-radius: 50%;
+            left: -37px;
+            top: 7px;
+        }
+
+        .experience-item h3 {
+            font-size: 1.35rem;
+        }
+
+        .experience-item h4 {
+            color: var(--blue);
+            margin: 4px 0 10px;
+        }
+
+        .experience-item p {
+            color: var(--gray);
+        }
+
+
+        /* ================================
+           PROJECTS
+        ================================= */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .project-image {
+            height: 230px;
+            background:
+                linear-gradient(135deg, #132642, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.65);
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .project-content {
+            padding: 28px;
+        }
+
+        .project-type {
+            color: var(--blue);
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .project-card h3 {
+            margin: 8px 0 12px;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: var(--gray);
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #e9eef5;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            color: #334155;
+        }
+
+        .project-link {
+            font-weight: bold;
+            color: var(--blue);
+        }
+
+
+        /* ================================
+           SKILLS
+        ================================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--navy-light);
+            padding: 30px;
+            border-radius: 7px;
+            border-top: 3px solid var(--blue-light);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 7px 0;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+
+        /* ================================
+           RESUME
+        ================================= */
+        .resume-box {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .resume-box p {
+            color: var(--gray);
+            max-width: 650px;
+            margin-top: 10px;
+        }
+
+        .resume-box .btn-outline {
+            color: var(--dark);
+            border-color: #94a3b8;
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================= */
+        .contact-content {
+            max-width: 700px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+        footer {
+            background: #07101f;
+            color: #94a3b8;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+        @media (max-width: 800px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(3) {
+                display: none;
+            }
+
+            .about-grid,
+            .project-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+<nav>
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            AG<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+<header class="hero" id="home">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                Mechanical Engineering Portfolio
+            </div>
+
+            <h1>Alex Garcia</h1>
+
+            <h2>
+                Mechanical Engineering · Mechanical Design · Industrial Systems
+            </h2>
+
+            <p>
+                Mechanical Engineering student at the University of Louisiana
+                at Lafayette with experience in industrial engineering,
+                mechanical design, CAD, automation, and software development.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                </a>
+
+                <a href="#resume" class="btn btn-outline">
+                    View Resume
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+<section class="section" id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-subtitle">
+            Mechanical engineering, industrial systems, and technology.
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am a Mechanical Engineering student at the University
+                    of Louisiana at Lafayette with a minor in Mathematics.
+                    My interests include mechanical design, industrial
+                    equipment, manufacturing, energy systems, and process
+                    engineering.
+                </p>
+
+                <p>
+                    My experience combines traditional mechanical engineering
+                    with CAD, programming, automation, and software
+                    development. I enjoy designing systems, analyzing how they
+                    perform, and developing practical solutions to engineering
+                    problems.
+                </p>
+
+                <p>
+                    This portfolio documents my engineering experience,
+                    technical projects, CAD work, and ongoing development as
+                    an engineer.
+                </p>
+
+            </div>
+
+            <div class="quick-info">
+
+                <div>
+                    <strong>University</strong>
+                    University of Louisiana at Lafayette
+                </div>
+
+                <div>
+                    <strong>Degree</strong>
+                    B.S. Mechanical Engineering
+                </div>
+
+                <div>
+                    <strong>Minor</strong>
+                    Mathematics
+                </div>
+
+                <div>
+                    <strong>Primary Interests</strong>
+                    Mechanical Design · Industrial Systems · Energy
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     EXPERIENCE
+===================================== -->
+<section class="section section-light" id="experience">
+
+    <div class="container">
+
+        <h2 class="section-title">Engineering Experience</h2>
+
+        <p class="section-subtitle">
+            Professional engineering and technical experience.
+        </p>
+
+        <div class="experience">
+
+            <div class="experience-item">
+
+                <h3>Packaging Corporation of America</h3>
+
+                <h4>Capital Engineering Intern</h4>
+
+                <p>
+                    DeRidder Mill · Mechanical equipment · Capital projects ·
+                    SolidWorks · AutoCAD / Plant 3D · P&amp;IDs · Engineering drawings
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <h3>PCM Technologies</h3>
+
+                <h4>Web / Application Developer</h4>
+
+                <p>
+                    Developed business applications, automation systems,
+                    inventory tools, workflow solutions, and websites using
+                    Microsoft Power Platform and web technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PROJECTS
+===================================== -->
+<section class="section" id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">Featured Projects</h2>
+
+        <p class="section-subtitle">
+            Selected mechanical engineering, energy, CAD, and automation work.
+        </p>
+
+
+        <div class="project-grid">
+
+
+            <!-- PROJECT 1 -->
+            <article class="project-card">
+
+                <div class="project-image">
+                    ADD CAD IMAGE
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-type">
+                        Senior Design
+                    </span>
+
+                    <h3>Modular Maintenance Skid</h3>
+
+                    <p>
+                        Development of a compact maintenance platform combining
+                        mechanical design, hydraulic actuation, drivetrain
+                        systems, kinematic analysis, and interchangeable tooling.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Hydraulics</span>
+                        <span class="tag">Kinematics</span>
+                        <span class="tag">Machine Design</span>
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 2 -->
+            <article class="project-card">
+
+                <div class="project-image">
+                    ADD PROJECT IMAGE
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-type">
+                        Energy Engineering
+                    </span>
+
+                    <h3>Industrial Energy Analysis</h3>
+
+                    <p>
+                        Analysis of industrial electricity, natural gas,
+                        water, wastewater, demand, utility costs, and
+                        facility load factors.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Energy Systems</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+            <article class="project-card">
+
+                <div class="project-image">
+                    ADD CAD IMAGE
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-type">
+                        Mechanical Design
+                    </span>
+
+                    <h3>CAD & Machine Design</h3>
+
+                    <p>
+                        Mechanical components, assemblies, gear systems,
+                        equipment layouts, structural designs, and engineering
+                        drawings developed using modern CAD tools.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Inventor</span>
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">ANSYS</span>
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Projects →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 4 -->
+            <article class="project-card">
+
+                <div class="project-image">
+                    ADD SOFTWARE IMAGE
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-type">
+                        Automation & Software
+                    </span>
+
+                    <h3>Engineering & Business Automation</h3>
+
+                    <p>
+                        Development of applications and automated workflows
+                        integrating engineering problem solving with software
+                        development.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Power Apps</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Web Development</span>
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Projects →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SKILLS
+===================================== -->
+<section class="section section-dark" id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <p class="section-subtitle">
+            Engineering tools and technologies used across academic,
+            professional, and personal projects.
+        </p>
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>Engineering</h3>
+
+                <ul>
+                    <li>Mechanical Design</li>
+                    <li>Machine Design</li>
+                    <li>Hydraulic Systems</li>
+                    <li>Kinematics</li>
+                    <li>Energy Systems</li>
+                    <li>P&amp;IDs</li>
+                    <li>Engineering Drawings</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Engineering Software</h3>
+
+                <ul>
+                    <li>SolidWorks</li>
+                    <li>AutoCAD</li>
+                    <li>Plant 3D</li>
+                    <li>Autodesk Inventor</li>
+                    <li>ANSYS</li>
+                    <li>Microsoft Excel</li>
+                    <li>Power BI</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Programming & Automation</h3>
+
+                <ul>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                    <li>HTML / CSS</li>
+                    <li>JavaScript</li>
+                    <li>Microsoft Power Apps</li>
+                    <li>Power Automate</li>
+                    <li>SharePoint</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     RESUME
+===================================== -->
+<section class="section" id="resume">
+
+    <div class="container">
+
+        <div class="resume-box">
+
+            <div>
+
+                <h2>Resume</h2>
+
+                <p>
+                    View my education, professional experience, engineering
+                    projects, certifications, and technical skills.
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <!--
+                    Upload your resume PDF to the repository
+                    and name it resume.pdf
+                -->
+
+                <a href="resume.pdf"
+                   target="_blank"
+                   class="btn btn-primary">
+                    View Resume
+                </a>
+
+                <a href="resume.pdf"
+                   download
+                   class="btn btn-outline">
+                    Download PDF
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+<section class="section section-dark" id="contact">
+
+    <div class="container">
+
+        <div class="contact-content">
+
+            <h2 class="section-title">Contact</h2>
+
+            <p class="section-subtitle">
+                Interested in discussing engineering opportunities,
+                projects, or professional collaboration?
+            </p>
+
+            <div class="contact-links">
+
+                <!-- CHANGE THESE -->
+
+                <a href="mailto:YOUR_EMAIL@example.com"
+                   class="btn btn-primary">
+                    Email Me
+                </a>
+
+                <a href="YOUR_LINKEDIN_URL"
+                   target="_blank"
+                   class="btn btn-outline">
+                    LinkedIn
+                </a>
+
+                <a href="YOUR_GITHUB_URL"
+                   target="_blank"
+                   class="btn btn-outline">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+<footer>
+
+    <div class="container">
+
+        <p>
+            © <span id="year"></span> Alex Garcia · Mechanical Engineering Portfolio
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
