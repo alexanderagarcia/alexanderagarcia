@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume | Alex Garcia</title>
+
+    <meta name="description"
+        content="Resume of Alex Garcia, Mechanical Engineering student at the University of Louisiana at Lafayette.">
+
+    <style>
+
+        :root {
+            --navy: #0b1018;
+            --navy-light: #151b24;
+            --red: #b91c1c;
+            --red-light: #ef4444;
+            --red-dark: #991b1b;
+            --red-soft: #f87171;
+            --white: #ffffff;
+            --light: #f5f6f7;
+            --gray: #64748b;
+            --dark: #111827;
+            --border: #dbe1e8;
+            --max-width: 1050px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
+
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 16, 24, 0.97);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            width: min(90%, 1200px);
+            margin: auto;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--red-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d8e0ea;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: var(--red-soft);
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .resume-header {
+            background:
+                radial-gradient(
+                    circle at 85% 50%,
+                    rgba(185, 28, 28, 0.12),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    90deg,
+                    #070b11,
+                    #0b1018
+                );
+
+            color: white;
+            padding: 80px 0 70px;
+        }
+
+        .resume-label {
+            color: var(--red-soft);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .resume-header h1 {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .resume-header h2 {
+            font-size: 1.3rem;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            color: #aebbc9;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--red-soft);
+        }
+
+
+        /* ================================
+           RESUME CONTENT
+        ================================= */
+
+        main {
+            padding: 65px 0 90px;
+        }
+
+        .resume-section {
+            margin-bottom: 55px;
+        }
+
+        .section-title {
+            font-size: 1.65rem;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 70px;
+            height: 2px;
+            background: var(--red);
+        }
+
+
+        /* ================================
+           EDUCATION / EXPERIENCE
+        ================================= */
+
+        .entry {
+            margin-bottom: 30px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .entry h3 {
+            font-size: 1.15rem;
+        }
+
+        .entry-role {
+            color: var(--red);
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .entry-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .entry-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .entry p {
+            color: #475569;
+        }
+
+
+        /* ================================
+           PROJECTS
+        ================================= */
+
+        .project {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project:first-of-type {
+            padding-top: 0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project h3 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .project p {
+            color: #475569;
+        }
+
+
+        /* ================================
+           SKILLS
+        ================================= */
+
+        .skill-group {
+            margin-bottom: 22px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group h3 {
+            color: var(--red);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .skill-group p {
+            color: #475569;
+        }
+
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .resume-actions {
+            margin-top: 35px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #64748b;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--red-light);
+            color: var(--red-soft);
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #05080d;
+            color: #94a3b8;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(239, 68, 68, 0.15);
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(3),
+            .nav-links li:nth-child(4) {
+                display: none;
+            }
+
+            .entry-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .entry-date {
+                white-space: normal;
+            }
+
+            .resume-header {
+                padding: 60px 0;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION
+================================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            AG<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html#about">About</a>
+            </li>
+
+            <li>
+                <a href="index.html#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="index.html#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="index.html#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="resume.html" class="active">Resume</a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ================================
+     HEADER
+================================= -->
+
+<header class="resume-header">
+
+    <div class="container">
+
+        <div class="resume-label">
+            Resume
+        </div>
+
+        <h1>Alex Garcia</h1>
+
+        <h2>Mechanical Engineering Student</h2>
+
+        <div class="contact-info">
+
+            <span>Lafayette, Louisiana</span>
+
+            <span>337-212-6977</span>
+
+            <a href="mailto:alex@garciav.com">
+                alex@garciav.com
+            </a>
+
+        </div>
+
+        <div class="resume-actions">
+
+            <a href="index.html"
+               class="btn btn-outline">
+                ← Portfolio
+            </a>
+
+            <a href="resume.pdf"
+               target="_blank"
+               class="btn btn-primary">
+                View PDF
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================================
+     RESUME
+================================= -->
+
+<main>
+
+    <div class="container">
+
+
+        <!-- EDUCATION -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+            <div class="entry">
+
+                <div class="entry-header">
+
+                    <div>
+
+                        <h3>
+                            University of Louisiana at Lafayette
+                        </h3>
+
+                        <div class="entry-location">
+                            Lafayette, Louisiana
+                        </div>
+
+                    </div>
+
+                    <div class="entry-date">
+                        August 2022 – December 2026
+                    </div>
+
+                </div>
+
+                <div class="entry-role">
+                    Bachelor of Science in Mechanical Engineering
+                </div>
+
+                <p>
+                    3.33 GPA · National Honors Society
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+                Experience
+            </h2>
+
+
+            <div class="entry">
+
+                <div class="entry-header">
+
+                    <div>
+
+                        <h3>
+                            Packaging Corporation of America (PCA)
+                        </h3>
+
+                        <div class="entry-location">
+                            DeRidder, Louisiana
+                        </div>
+
+                    </div>
+
+                    <div class="entry-date">
+                        May 2026 – August 2026
+                    </div>
+
+                </div>
+
+                <div class="entry-role">
+                    Mechanical Capital Engineering Intern
+                </div>
+
+                <p>
+                    Supported capital engineering projects involving piping
+                    systems, pumps, rotating equipment, P&amp;IDs, mechanical
+                    design, structural components, and operations for projects.
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-header">
+
+                    <div>
+
+                        <h3>
+                            PCM Technologies
+                        </h3>
+
+                        <div class="entry-location">
+                            Lafayette, Louisiana
+                        </div>
+
+                    </div>
+
+                    <div class="entry-date">
+                        June 2022 – Present
+                    </div>
+
+                </div>
+
+                <div class="entry-role">
+                    Web Application Developer
+                </div>
+
+                <p>
+                    Developed full-stack business applications and automated
+                    workflows using web, database, and Microsoft Power Platform.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+                Engineering Projects
+            </h2>
+
+
+            <div class="project">
+
+                <h3>Paper Machine Repulper Pump System</h3>
+
+                <p>
+                    Developed system curves at 4–5% stock consistency,
+                    calculating TDH, major/minor losses, flow distribution,
+                    and centrifugal pump operating requirements.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Paper Machine Repulper Mechanical Upgrade</h3>
+
+                <p>
+                    Modeled pumps, 200–400 HP motors, couplings, valves,
+                    piping, structural steel, and equipment interfaces in
+                    SolidWorks for installation and interference verification.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Dilution Pump Upgrade</h3>
+
+                <p>
+                    Evaluated centrifugal pump performance and 22-in impeller
+                    upgrade using pump curves, PARCview process data,
+                    pressure readings, and required GPM.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Piping &amp; P&amp;IDs</h3>
+
+                <p>
+                    Developed and verified industrial piping layouts
+                    incorporating pipe sizing, routing, elevations, valves,
+                    reducers, flow meters, fittings, pumps, and equipment
+                    connections.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Dust Collector System</h3>
+
+                <p>
+                    Engineered a wastewater/slurry transfer concept including
+                    collection, piping routing, pump requirements, solids
+                    handling, filtration, and discharge to an existing pit.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Lump Breaker Hydraulic Conversion</h3>
+
+                <p>
+                    Evaluated conversion from pneumatic to hydraulic operation
+                    through equipment modeling, hydraulic schematics,
+                    component layout, and mechanical interface analysis.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Unirun Exhaust Fan</h3>
+
+                <p>
+                    Modeled fan/duct installation using SolidWorks, ReCap,
+                    and 3D scan data to evaluate placement, duct routing,
+                    clearances, and interferences.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Structural / Civil Design</h3>
+
+                <p>
+                    Evaluated structural steel, I-beams, equipment supports,
+                    concrete bases/foundations, anchor locations, elevations,
+                    and installation clearances for capital projects.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Rotating Equipment Reliability</h3>
+
+                <p>
+                    Analyzed pumps, bearings, shafts, couplings, motors,
+                    vibration, alignment, and operating data to support
+                    equipment condition and upgrade evaluations.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Capital Project Execution</h3>
+
+                <p>
+                    Developed SOWs, CARs, RFQs, estimates, drawings, and
+                    technical packages while coordinating vendors,
+                    contractors, procurement, installation, and outages.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+                Technical Skills
+            </h2>
+
+
+            <div class="skill-group">
+
+                <h3>Mechanical Design &amp; CAD</h3>
+
+                <p>
+                    SOLIDWORKS, AutoCAD, Autodesk Inventor, Autodesk ReCap,
+                    3D Modeling, Assemblies, Engineering Drawings, GD&amp;T,
+                    3D Scanning, Interference Analysis
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Piping &amp; Process Systems</h3>
+
+                <p>
+                    P&amp;IDs, PFDs, Piping Layouts, Pipe Sizing,
+                    Pump &amp; System Curves, TDH, Head Loss Calculations,
+                    Flow &amp; Pressure Analysis, Valves, Flow Instrumentation,
+                    Slurry &amp; Stock
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Rotating &amp; Mechanical Equipment</h3>
+
+                <p>
+                    Centrifugal Pumps, Motors, Bearings, Shafts, Couplings,
+                    Gearboxes, Reducers, Fans, Blowers, Mechanical Seals,
+                    Alignment, Lubrication
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Structural &amp; Industrial Design</h3>
+
+                <p>
+                    Structural Steel, I-Beams, W-Shapes, Equipment Supports,
+                    Equipment Bases, Concrete Foundations, Anchor Bolts,
+                    Equipment Layouts, Industrial Construction
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Engineering Analysis</h3>
+
+                <p>
+                    Microsoft Excel, PARCview, Pump Performance Analysis,
+                    Reliability Analysis, Field Measurements,
+                    Engineering Calculations, Data Analysis
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Capital Project Engineering</h3>
+
+                <p>
+                    Scope of Work, CARs, RFQs, Cost Estimation,
+                    Vendor Coordination, Contractor Coordination,
+                    Procurement Support, Field Verification,
+                    Outage &amp; Installation Support,
+                    Technical Documentation
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Engineering Software</h3>
+
+                <p>
+                    SOLIDWORKS, AutoCAD, Inventor, ReCap, Excel,
+                    PARCview, Trident, Microsoft 365
+                </p>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>Certifications</h3>
+
+                <p>
+                    Certified SOLIDWORKS Associate (CSWA) ·
+                    12 Microsoft Certifications
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © <span id="year"></span>
+            Alex Garcia · Mechanical Engineering Portfolio
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>

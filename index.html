@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Alex Garcia | Mechanical Engineering</title>
-    <meta name="description" content="Engineering portfolio of Alex Garcia — Mechanical Engineering, mechanical design, industrial systems, CAD, automation, and software development.">
+
+    <meta name="description"
+        content="Engineering portfolio of Alex Garcia — Mechanical Engineering, mechanical design, industrial systems, CAD, automation, and software development.">
 
     <style>
-        /* ================================
+
+        /* =================================
            GLOBAL
         ================================= */
+
         :root {
-            --navy: #0b172a;
-            --navy-light: #132642;
-            --blue: #2563eb;
-            --blue-light: #3b82f6;
+            --navy: #0b1018;
+            --navy-light: #151b24;
+
+            --red: #b91c1c;
+            --red-light: #ef4444;
+            --red-dark: #991b1b;
+            --red-soft: #f87171;
+
             --white: #ffffff;
-            --light: #f4f6f8;
+            --light: #f5f6f7;
             --gray: #64748b;
             --dark: #111827;
             --border: #dbe1e8;
+
             --max-width: 1200px;
         }
 
@@ -80,19 +90,20 @@
         }
 
         .section-dark .section-subtitle {
-            color: #b9c5d6;
+            color: #aeb7c3;
         }
 
 
-        /* ================================
+        /* =================================
            NAVIGATION
         ================================= */
+
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 23, 42, 0.97);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(11, 16, 24, 0.97);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-container {
@@ -110,7 +121,7 @@
         }
 
         .logo span {
-            color: var(--blue-light);
+            color: var(--red-light);
         }
 
         .nav-links {
@@ -126,13 +137,14 @@
         }
 
         .nav-links a:hover {
-            color: white;
+            color: var(--red-soft);
         }
 
 
-        /* ================================
+        /* =================================
            HERO
         ================================= */
+
         .hero {
             min-height: 88vh;
             display: flex;
@@ -140,10 +152,15 @@
             color: white;
 
             background:
+                radial-gradient(
+                    circle at 85% 50%,
+                    rgba(185, 28, 28, 0.12),
+                    transparent 35%
+                ),
                 linear-gradient(
                     90deg,
-                    rgba(7, 18, 34, 0.98),
-                    rgba(11, 23, 42, 0.92)
+                    #070b11,
+                    #0b1018
                 );
         }
 
@@ -153,7 +170,7 @@
         }
 
         .hero-label {
-            color: #60a5fa;
+            color: var(--red-soft);
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 0.85rem;
@@ -182,6 +199,11 @@
             margin-bottom: 35px;
         }
 
+
+        /* =================================
+           BUTTONS
+        ================================= */
+
         .buttons {
             display: flex;
             gap: 15px;
@@ -197,12 +219,12 @@
         }
 
         .btn-primary {
-            background: var(--blue);
+            background: var(--red);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #1d4ed8;
+            background: var(--red-dark);
             transform: translateY(-2px);
         }
 
@@ -212,14 +234,16 @@
         }
 
         .btn-outline:hover {
-            border-color: white;
+            border-color: var(--red-light);
+            color: var(--red-soft);
             transform: translateY(-2px);
         }
 
 
-        /* ================================
+        /* =================================
            ABOUT
         ================================= */
+
         .about-grid {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
@@ -233,7 +257,7 @@
         }
 
         .quick-info {
-            border-left: 3px solid var(--blue);
+            border-left: 3px solid var(--red);
             padding-left: 25px;
         }
 
@@ -250,9 +274,10 @@
         }
 
 
-        /* ================================
+        /* =================================
            EXPERIENCE
         ================================= */
+
         .experience {
             border-left: 2px solid #cbd5e1;
             padding-left: 30px;
@@ -268,7 +293,7 @@
             position: absolute;
             width: 12px;
             height: 12px;
-            background: var(--blue);
+            background: var(--red);
             border-radius: 50%;
             left: -37px;
             top: 7px;
@@ -279,7 +304,7 @@
         }
 
         .experience-item h4 {
-            color: var(--blue);
+            color: var(--red);
             margin: 4px 0 10px;
         }
 
@@ -288,9 +313,10 @@
         }
 
 
-        /* ================================
+        /* =================================
            PROJECTS
         ================================= */
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -307,17 +333,25 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
         }
 
         .project-image {
             height: 230px;
+
             background:
-                linear-gradient(135deg, #132642, #2563eb);
+                linear-gradient(
+                    135deg,
+                    #151b24,
+                    #7f1d1d
+                );
+
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255,255,255,0.65);
+
+            color: rgba(255, 255, 255, 0.65);
+
             font-size: 1rem;
             letter-spacing: 2px;
         }
@@ -327,7 +361,7 @@
         }
 
         .project-type {
-            color: var(--blue);
+            color: var(--red);
             font-size: 0.75rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -352,7 +386,7 @@
         }
 
         .tag {
-            background: #e9eef5;
+            background: #f1f1f1;
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.78rem;
@@ -361,13 +395,18 @@
 
         .project-link {
             font-weight: bold;
-            color: var(--blue);
+            color: var(--red);
+        }
+
+        .project-link:hover {
+            color: var(--red-dark);
         }
 
 
-        /* ================================
+        /* =================================
            SKILLS
         ================================= */
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -378,7 +417,7 @@
             background: var(--navy-light);
             padding: 30px;
             border-radius: 7px;
-            border-top: 3px solid var(--blue-light);
+            border-top: 3px solid var(--red);
         }
 
         .skill-card h3 {
@@ -392,18 +431,21 @@
         .skill-card li {
             padding: 7px 0;
             color: #cbd5e1;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
 
-        /* ================================
+        /* =================================
            RESUME
         ================================= */
+
         .resume-box {
             background: var(--light);
             border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
             border-radius: 8px;
             padding: 45px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -421,10 +463,16 @@
             border-color: #94a3b8;
         }
 
+        .resume-box .btn-outline:hover {
+            color: var(--red);
+            border-color: var(--red);
+        }
 
-        /* ================================
+
+        /* =================================
            CONTACT
         ================================= */
+
         .contact-content {
             max-width: 700px;
         }
@@ -437,21 +485,24 @@
         }
 
 
-        /* ================================
+        /* =================================
            FOOTER
         ================================= */
+
         footer {
-            background: #07101f;
+            background: #05080d;
             color: #94a3b8;
             padding: 25px 0;
             text-align: center;
             font-size: 0.85rem;
+            border-top: 1px solid rgba(239, 68, 68, 0.15);
         }
 
 
-        /* ================================
+        /* =================================
            MOBILE
         ================================= */
+
         @media (max-width: 800px) {
 
             .nav-links {
@@ -478,16 +529,20 @@
                 letter-spacing: -2px;
             }
         }
+
     </style>
 </head>
 
 
 <body>
 
+
 <!-- =====================================
      NAVIGATION
 ===================================== -->
+
 <nav>
+
     <div class="container nav-container">
 
         <a href="#home" class="logo">
@@ -499,18 +554,21 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#resume">Resume</a></li>
+            <li><a href="resume.html">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
     </div>
+
 </nav>
 
 
 <!-- =====================================
      HERO
 ===================================== -->
+
 <header class="hero" id="home">
+
     <div class="container">
 
         <div class="hero-content">
@@ -532,23 +590,28 @@
             </p>
 
             <div class="buttons">
+
                 <a href="#projects" class="btn btn-primary">
                     View My Work
                 </a>
 
-                <a href="#resume" class="btn btn-outline">
+                <a href="resume.html" class="btn btn-outline">
                     View Resume
                 </a>
+
             </div>
 
         </div>
+
     </div>
+
 </header>
 
 
 <!-- =====================================
      ABOUT
 ===================================== -->
+
 <section class="section" id="about">
 
     <div class="container">
@@ -621,6 +684,7 @@
 <!-- =====================================
      EXPERIENCE
 ===================================== -->
+
 <section class="section section-light" id="experience">
 
     <div class="container">
@@ -637,7 +701,7 @@
 
                 <h3>Packaging Corporation of America</h3>
 
-                <h4>Capital Engineering Intern</h4>
+                <h4>Mechanical Capital Engineering Intern</h4>
 
                 <p>
                     DeRidder Mill · Mechanical equipment · Capital projects ·
@@ -671,6 +735,7 @@
 <!-- =====================================
      PROJECTS
 ===================================== -->
+
 <section class="section" id="projects">
 
     <div class="container">
@@ -681,11 +746,11 @@
             Selected mechanical engineering, energy, CAD, and automation work.
         </p>
 
-
         <div class="project-grid">
 
 
             <!-- PROJECT 1 -->
+
             <article class="project-card">
 
                 <div class="project-image">
@@ -723,6 +788,7 @@
 
 
             <!-- PROJECT 2 -->
+
             <article class="project-card">
 
                 <div class="project-image">
@@ -759,6 +825,7 @@
 
 
             <!-- PROJECT 3 -->
+
             <article class="project-card">
 
                 <div class="project-image">
@@ -771,7 +838,7 @@
                         Mechanical Design
                     </span>
 
-                    <h3>CAD & Machine Design</h3>
+                    <h3>CAD &amp; Machine Design</h3>
 
                     <p>
                         Mechanical components, assemblies, gear systems,
@@ -796,6 +863,7 @@
 
 
             <!-- PROJECT 4 -->
+
             <article class="project-card">
 
                 <div class="project-image">
@@ -805,10 +873,10 @@
                 <div class="project-content">
 
                     <span class="project-type">
-                        Automation & Software
+                        Automation &amp; Software
                     </span>
 
-                    <h3>Engineering & Business Automation</h3>
+                    <h3>Engineering &amp; Business Automation</h3>
 
                     <p>
                         Development of applications and automated workflows
@@ -831,6 +899,7 @@
 
             </article>
 
+
         </div>
 
     </div>
@@ -841,6 +910,7 @@
 <!-- =====================================
      SKILLS
 ===================================== -->
+
 <section class="section section-dark" id="skills">
 
     <div class="container">
@@ -891,7 +961,7 @@
 
             <div class="skill-card">
 
-                <h3>Programming & Automation</h3>
+                <h3>Programming &amp; Automation</h3>
 
                 <ul>
                     <li>Python</li>
@@ -905,6 +975,7 @@
 
             </div>
 
+
         </div>
 
     </div>
@@ -915,6 +986,7 @@
 <!-- =====================================
      RESUME
 ===================================== -->
+
 <section class="section" id="resume">
 
     <div class="container">
@@ -934,21 +1006,15 @@
 
             <div class="buttons">
 
-                <!--
-                    Upload your resume PDF to the repository
-                    and name it resume.pdf
-                -->
-
-                <a href="resume.pdf"
-                   target="_blank"
+                <a href="resume.html"
                    class="btn btn-primary">
                     View Resume
                 </a>
 
                 <a href="resume.pdf"
-                   download
+                   target="_blank"
                    class="btn btn-outline">
-                    Download PDF
+                    View PDF
                 </a>
 
             </div>
@@ -963,6 +1029,7 @@
 <!-- =====================================
      CONTACT
 ===================================== -->
+
 <section class="section section-dark" id="contact">
 
     <div class="container">
@@ -978,9 +1045,7 @@
 
             <div class="contact-links">
 
-                <!-- CHANGE THESE -->
-
-                <a href="mailto:YOUR_EMAIL@example.com"
+                <a href="mailto:alex@garciav.com"
                    class="btn btn-primary">
                     Email Me
                 </a>
@@ -1009,6 +1074,7 @@
 <!-- =====================================
      FOOTER
 ===================================== -->
+
 <footer>
 
     <div class="container">
@@ -1023,10 +1089,12 @@
 
 
 <script>
-    // Automatically update copyright year
+
     document.getElementById("year").textContent =
         new Date().getFullYear();
+
 </script>
+
 
 </body>
 </html>
